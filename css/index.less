@@ -459,6 +459,7 @@ img{
 	.nav-list{
 		.clearfix;
 		li{
+			margin-left:5px;
 			.fl;
 			&>a{
 				font-family:'微软雅黑';
@@ -466,20 +467,25 @@ img{
 				padding:0 15px;
 				position:relative;
 				.hop-pic{
-					display:none;
+					display:block;
 					width:44px;
 					height:14px;
 					background:url(../images/hop-pic.png);
 					background-size:100%;
 					position:absolute;
-					top:-14px;
-					right:20%;
+					top:0;
+					left:~'calc(50% - 22px)';
 				    /*transform: translate(-20px,-5px);
-				    opacity:1;
+				    
 				    */
+				    opacity:0;
+				    transition:top .8s,opacity .8s;
 				}
 				&:hover .hop-pic{
 					display:block;
+					top:-14px;
+					opacity:1;
+					transition:top .8s,opacity .8s;
 				}
 			}
 		}
@@ -493,7 +499,7 @@ img{
 	}
 	.navtit > h3 > i,
 	.nav-list > li > a > i{
-		margin:0 13px;
+		margin: 0 5px 0 0;
 	}  
 	/*
 		需要js判断 当a标签移上之后 hop-pic直接hover
@@ -817,19 +823,20 @@ img{
 		width:35px;
 		height:35px;
 		margin:5px 0;
-		&:hover{
-			.tq{
-				opacity:1;
-				right:35px;
-				transition:opacity .8s,right .8s;
-			}
-		}
+		
 	}
 	.user-n{
 		display:block;
 		height:35px;
 		line-height:35px;
 		font-size:22px;
+		&:hover{
+			&+.tq{
+				opacity:1;
+				right:35px;
+				transition:opacity .8s,right .8s;
+			}
+		}
 	}
 	.user-cart{
 		text-align:center;
