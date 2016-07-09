@@ -266,6 +266,7 @@ img {
 	header
 */
 #header {
+  min-width: 1230px;
   background: #ffffff;
 }
 .logo {
